@@ -1,3 +1,5 @@
+
+Note: Name of companies is used for testing puproses.
 create table customer_info
 (
 C_ID Varchar2(20) primary key,
