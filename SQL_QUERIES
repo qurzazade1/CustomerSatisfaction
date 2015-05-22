@@ -1,0 +1,103 @@
+create table customer_info
+(
+C_ID Varchar2(20) primary key,
+first_name Varchar2(20),
+last_name Varchar2(20),
+father_name Varchar2(20),
+age Varchar2(20),
+C_password Varchar2(20),
+c_admin Varchar2(20)default 'user'
+);
+
+create table company_info
+(
+C_ID Varchar2(20) primary key,
+company_name Varchar2(20) not null,
+company_type Varchar2(20) not null,
+established_year Varchar2(20) not null,
+mail Varchar2(20) not null,
+C_password Varchar2(20) not null
+);
+
+create table customer_complain
+(
+userid Varchar2(20),
+company_name Varchar2(20),
+complain_type Varchar2(20),
+textarea Varchar2(4000)
+);
+
+create table customer_request
+(
+userid Varchar2(20),
+company_name Varchar2(20),
+request_type Varchar2(20),
+textarea Varchar2(4000)
+);
+
+create sequence c_id_of_customer_info
+start with 10000000
+Increment by 1
+nocache 
+nocycle;
+
+create sequence c_password_of_customer_info
+start with 100
+Increment by 1
+nocache 
+nocycle;
+
+declare
+l_first_name varchar2(20);
+l_last_name Varchar2(20);
+l_father_name varchar2(20);
+cursor cur is select first_name,last_name,email from hr.employees;
+begin
+open cur;
+Loop
+fetch cur into L_first_name,l_last_name,l_father_name;
+exit when cur%notfound;
+insert into customer_info
+values(c_id_of_customer_info.nextval,L_First_Name,l_last_name,l_father_name,45,c_password_of_customer_info.nextval,'user');
+end loop;
+close cur;
+end;
+select * from customer_info order by c_id;
+
+update Customer_Info set first_name='Sadig',
+last_name='Rzazada',father_name='Idret',c_password=10000,c_admin='admin'
+where c_id=10000000;
+
+update Customer_Info set first_name='Ulduz',
+last_name='Bagirova',c_password=10001,c_admin='admin'
+where c_id=10000001;
+
+update Customer_Info set first_name='Polad',
+last_name='Gulmemmedli',c_password=10002,c_admin='admin'
+where c_id=10000002;
+
+
+
+commit;
+
+
+insert into company_info
+values(1000000000,'Azercell','mobile',1900,'azercell@gmail.com',100000 );
+
+insert into company_info
+values(1000000001,'Bakcell','mobile',1900,'bakcell@gmail.com',100001 );
+
+insert into company_info
+values(1000000002,'Nikoil','bank',1900,'nikoil@gmail.com',100002 );
+
+
+insert into company_info
+values(1000000003,'Bank of Baku','bank',1904,'bankofbaku@gmail.com',100003 );
+
+
+insert into company_info
+values(1000000004,'Palmali','financial',1904,'palmali@gmail.com',100004 );
+insert into company_info
+values(1000000005,'Socar','oil',1988,'oil@gmail.com',100005 );
+
+Commit;
