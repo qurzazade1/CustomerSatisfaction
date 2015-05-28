@@ -2,6 +2,10 @@
 CustomerSatisfaction
 
 
+Note: Name of companies is used for testing purposes-not offical.
+You can see the project screenshots in the following dropbox link.
+https://www.dropbox.com/sh/r7y38hfj1sx80zm/AACdJSbIuT4bupPryX6ZBoTCa?dl=0
+ 
 1)Install the oracle express edition. You will be asked to specify a password and to confrim it. 
 use as password: "Oracle" without double quote;
 this password is used to connect to database by java class.
@@ -44,7 +48,3 @@ you can complain or request to any company registered and you will able to see t
 
 
 
-
-
-Note: Name of companies is used for testing purposes.
- 
