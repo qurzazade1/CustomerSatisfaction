@@ -16,9 +16,8 @@ this password is used to connect to database by java class.
 and use "System" as username
 password:  "Oracle" which we used it in the process of installiation of Oracle
 
-4)there is a file which is called sql queries please run all 
-queries to create tables and to fill the date into it. 
-
+4)please run all queries (from the following link)to create tables and to fill the date into it. 
+https://www.dropbox.com/s/435facass3hdkka/Customer_Satisfaction_Sql_queries.txt?dl=0
 
 5)install  java development kid  from the folder-setup .
 Because you will be asked jdk when you install neatbeans
